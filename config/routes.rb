@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  namespace :api do
+    namespace :v1 do
+      get '/doctors', to: 'doctors#index'
+      get '/doctors/:id', to: 'doctors#show'
+      post '/doctors/create', to: 'doctors#create'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+    end
+  end
+
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
 
