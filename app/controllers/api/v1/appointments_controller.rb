@@ -15,6 +15,13 @@ class Api::V1::AppointmentsController < ApplicationController
       render json: @appointment.errors, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @appointment = Appointment.find(params[:id])
+    @appointment.destroy
+    render json: {status: 'success', message: 'Appointment deleted!'}
+  end
+  
   
 
   private
