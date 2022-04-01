@@ -14,6 +14,8 @@ class Api::V1::DoctorsController < ApplicationController
     if doctor.save
       render json: doctor, status: :created
     else 
-      render json: {error: }
+      render json: {error: doctor.errors, user: doctor }, status: :error
+    end
+  end
 
 end
