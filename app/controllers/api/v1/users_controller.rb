@@ -7,8 +7,8 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      render json: @user
       flash[:success] = 'Signup was successful'
-      # redirect_to Something_path
     else
       flash[:danger] = 'Cannot signup. Try again!'
     end
