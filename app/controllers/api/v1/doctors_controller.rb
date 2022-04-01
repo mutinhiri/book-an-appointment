@@ -13,12 +13,10 @@ class Api::V1::DoctorsController < ApplicationController
     doctor = Doctor.new(params.permit(:name, :image, :speciality, :bio, :experience))
     if doctor.save
       render json: doctor, status: :created
-    else 
-      render json: {error: doctor.errors, user: doctor }, status: :error
+    else
+      render json: { error: doctor.errors, user: doctor }, status: :error
     end
   end
 
-  def destroy
-  end
-
+  def destroy; end
 end
