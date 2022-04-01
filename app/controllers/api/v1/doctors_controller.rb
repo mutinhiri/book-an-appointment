@@ -10,7 +10,7 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def create
-    doctor = Doctor.new(params.permit(:name, :dscription, :price, :image))
+    doctor = Doctor.new(params.permit(:name, :image, :speciality, :bio, :experience))
     if doctor.save
       render json: doctor, status: :created
     else 

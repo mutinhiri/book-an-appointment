@@ -3,9 +3,9 @@ class CreateDoctor < ActiveRecord::Migration[7.0]
     create_table :doctors do |t|
       t.string :name
       t.string :image
-      t.string :specialty
+      t.string :speciality
       t.string :bio
-      t.string :integer
+      t.integer :experience
       t.timestamps
     end
   end
