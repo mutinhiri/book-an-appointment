@@ -10,7 +10,7 @@ class Api::V1::UsersController < ApplicationController
       flash[:success] = 'Signup was successful'
       #redirect_to Something_path
     else
-      flash[:error] = 'Cannot signup. Try again!'
+      flash[:danger] = 'Cannot signup. Try again!'
     end
     
   end
