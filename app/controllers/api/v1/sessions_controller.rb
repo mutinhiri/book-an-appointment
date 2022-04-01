@@ -15,7 +15,8 @@ class Api::V1::SessionsController < ApplicationController
   end
   
   def destroy
-    
+    session[:user_id] = nill
+    flash[:success] = 'You have logged out'
   end
   
 end
