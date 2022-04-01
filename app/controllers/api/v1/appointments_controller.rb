@@ -1,7 +1,7 @@
 class Api::V1::AppointmentsController < ApplicationController
   def index
     @appointment = Appointment.all.map do |appointed|
-      [appointed, {doctor: appointed.doctors.all.map(&:name)}]
+      [appointed, { doctor: appointed.doctors.all.map(&:name) }]
     end
     render json: @appointment
   end
@@ -19,14 +19,12 @@ class Api::V1::AppointmentsController < ApplicationController
   def destroy
     @appointment = Appointment.find(params[:id])
     @appointment.destroy
-    render json: {status: 'success', message: 'Appointment deleted!'}
+    render json: { status: 'success', message: 'Appointment deleted!' }
   end
-  
-  
 
   private
+
   def appointment_params
     params.require(:appointment).permit(:location, :dateOfAppointment, :user_id, :doctor_id)
   end
-    
 end
