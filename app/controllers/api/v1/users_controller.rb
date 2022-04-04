@@ -7,10 +7,10 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render json: @user
-      flash[:success] = 'Signup was successful'
+      render json: @user, status: :created
     else
-      flash[:danger] = 'Cannot signup. Try again!'
+      user = User.find_by(email: user_params[:email])
+      render json: {error: @user.errors, user: user}, status: :unprocessable_entity
     end
   end
 
