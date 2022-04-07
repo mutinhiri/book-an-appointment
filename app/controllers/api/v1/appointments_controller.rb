@@ -8,9 +8,10 @@ class Api::V1::AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
-    if @appointment.save
-      DoctorAppointment.create(doctor_id: params[:doctor_id], appointment_id: params[:@appointment.id])
+    if @appointment.save!
+      DoctorAppointment.create!(doctor_id: params[:doctor_id], appointment_id: @appointment.id)
       render json: @appointment, status: :created
+
     else
       render json: @appointment.errors, status: :unprocessable_entity
     end
@@ -25,6 +26,7 @@ class Api::V1::AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:location, :dateOfAppointment, :user_id, :doctor_id)
+    params.require(:appointment).permit(:user_id, :city, :dateOfAppointment, :doctor_id)
   end
+
 end
