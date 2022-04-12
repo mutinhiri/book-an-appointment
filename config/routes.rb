@@ -5,7 +5,6 @@ Rails.application.routes.draw do
       get '/doctors/:id', to: 'doctors#show'
       post '/doctors/create', to: 'doctors#create'
       post '/users', to: 'users#create'
-      get 'signup', to: 'users#new'
       resources :appointments
     end
   end
