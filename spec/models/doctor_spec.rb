@@ -5,7 +5,7 @@ RSpec.describe Doctor, type: :model do
         doctor = Doctor.new(
             name: 'Bunbee',
             image: "",
-            specialty: 'eyes',
+            speciality: 'eyes',
             bio: 'doctor with great experience',
             experience: 4
         )
@@ -15,7 +15,7 @@ RSpec.describe Doctor, type: :model do
     describe 'validation for doctor model' do
         it "should have a valid name" do
             subject.name = 'Bunbee'
-            expect(subject).to be_valid
+            expect(subject.name).to eq('Bunbee')
         end
     end
 end
