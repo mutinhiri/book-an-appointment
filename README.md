@@ -50,6 +50,7 @@ run `git clone https://github.com/mutinhiri/book-an-appointment`
 
 🤝 Contributing
 Contributions, issues, and feature requests are welcome!
+
 Feel free to check the issues page.
 
 Show your support
