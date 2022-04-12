@@ -10,7 +10,7 @@ class Api::V1::UsersController < ApplicationController
       render json: @user, status: :created
     else
       user = User.find_by(email: user_params[:email])
-      render json: {error: @user.errors, user: user}, status: :unprocessable_entity
+      render json: { error: @user.errors, user: }, status: :unprocessable_entity
     end
   end
 
