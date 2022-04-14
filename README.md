@@ -18,10 +18,19 @@ https://salty-atoll-87762.herokuapp.com
 
 https://velvety-chebakia-25efd4.netlify.app
 
+> Kanban Board
+
+- [Kanban Board](https://github.com/mutinhiri/book-an-appointment/projects/1)
+
+
+![Initial State](https://user-images.githubusercontent.com/76876422/160931303-6c32264b-fd95-4ea0-a179-bddd3b11b836.png)
+
 
 ## Team Members 
 
 2 people
+
+## [GitHub Repo](https://github.com/mutinhiri/book-an-appointment/tree/main)
 
 ## Getting Started
 run `git clone https://github.com/mutinhiri/book-an-appointment`
